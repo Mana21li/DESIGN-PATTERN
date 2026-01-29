@@ -10,7 +10,7 @@ import com.manali.strategyPattern.vehicle.Vehicle;
 public class Main {
     public static void main(String[] args) {
         System.out.println("##### Strategy Design Pattern! #####");
-        System.out.println("##### Vechicle Drive Modes! #####");
+        System.out.println("##### Vehicle Drive Modes! #####");
 
         Vehicle vehicle = new SportsVehicle(new SportsDrive());
         vehicle.drive();
