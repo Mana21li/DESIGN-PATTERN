@@ -1,8 +1,7 @@
-package com.manali.observerPattern.push.observable;
+package com.manali.observerPattern.observable.pullStrategy;
 
-import com.manali.observerPattern.push.observer.WeatherObserver;
+import com.manali.observerPattern.observer.pullStrategy.WeatherObserver;
 
-//Defines method for managing observers and notifying them of changes
 public interface WeatherObservable {
 
     void addObserver(WeatherObserver observer);

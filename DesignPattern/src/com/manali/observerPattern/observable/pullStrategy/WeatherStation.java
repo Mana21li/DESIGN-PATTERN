@@ -1,6 +1,7 @@
-package com.manali.observerPattern.push.observable;
+package com.manali.observerPattern.observable.pullStrategy;
 
-import com.manali.observerPattern.push.observer.WeatherObserver;
+import com.manali.observerPattern.observable.WeatherData;
+import com.manali.observerPattern.observer.pullStrategy.WeatherObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +9,11 @@ import java.util.List;
 public class WeatherStation implements WeatherObservable {
 
     private List<WeatherObserver> observers;
+    //observable data
     private WeatherData weatherData;
 
     public WeatherStation() {
-        this.observers = new ArrayList<>();
+        observers = new ArrayList<>();
     }
 
     @Override
@@ -27,11 +29,12 @@ public class WeatherStation implements WeatherObservable {
     @Override
     public void notifyObservers() {
         for (WeatherObserver observer : observers) {
-            observer.update(weatherData);
+            observer.update();
         }
     }
 
-    public  void setWeatherReadings(float temp, float humidity,  float pressure) {
+    @Override
+    public void setWeatherReadings(float temp, float humidity, float pressure) {
         this.weatherData = new WeatherData(temp, humidity, pressure);
         notifyObservers();
     }
@@ -39,6 +42,4 @@ public class WeatherStation implements WeatherObservable {
     public WeatherData getWeatherData() {
         return weatherData;
     }
-
-
 }

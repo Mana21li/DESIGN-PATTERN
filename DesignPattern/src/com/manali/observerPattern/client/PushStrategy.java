@@ -1,15 +1,16 @@
 package com.manali.observerPattern.client;
 
-import com.manali.observerPattern.push.observable.WeatherObservable;
-import com.manali.observerPattern.push.observable.WeatherStation;
-import com.manali.observerPattern.push.observer.CurrentConditionsDisplay;
-import com.manali.observerPattern.push.observer.ForecastConditionDisplay;
+import com.manali.observerPattern.observable.pushStrategy.WeatherObservable;
+import com.manali.observerPattern.observable.pushStrategy.WeatherStation;
+import com.manali.observerPattern.observer.pushStrategy.CurrentConditionsDisplay;
+import com.manali.observerPattern.observer.pushStrategy.ForecastConditionDisplay;
 
-public class Main {
+public class PushStrategy {
     public static void main(String[] args) {
         System.out.println("##### Observer Design Pattern! #####");
         System.out.println("##### Push Design Pattern! #####");
 
+        //push strategy
         //create weather station (observable/subject)
         WeatherObservable weatherStation = new WeatherStation();
 
@@ -23,6 +24,5 @@ public class Main {
         weatherStation.setWeatherReadings(30f, 4f, 65f);
 
         weatherStation.removeObserver(forecastDisplay);
-
     }
 }

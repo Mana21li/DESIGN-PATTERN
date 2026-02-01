@@ -1,6 +1,6 @@
-package com.manali.observerPattern.push.observer;
+package com.manali.observerPattern.observer.pushStrategy;
 
-import com.manali.observerPattern.push.observable.WeatherData;
+import com.manali.observerPattern.observable.WeatherData;
 
 public class CurrentConditionsDisplay implements WeatherObserver {
     @Override

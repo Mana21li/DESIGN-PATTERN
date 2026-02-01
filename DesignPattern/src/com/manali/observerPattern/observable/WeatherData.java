@@ -1,4 +1,4 @@
-package com.manali.observerPattern.push.observable;
+package com.manali.observerPattern.observable;
 
 public class WeatherData {
     private float temperature;
