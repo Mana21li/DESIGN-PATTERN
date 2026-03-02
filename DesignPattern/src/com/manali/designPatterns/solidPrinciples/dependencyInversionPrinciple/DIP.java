@@ -1,4 +1,4 @@
-package com.manali.dependencyInversionPrinciple;
+package com.manali.designPatterns.solidPrinciples.dependencyInversionPrinciple;
 
 public class DIP {
     public static void main(String[] args) {

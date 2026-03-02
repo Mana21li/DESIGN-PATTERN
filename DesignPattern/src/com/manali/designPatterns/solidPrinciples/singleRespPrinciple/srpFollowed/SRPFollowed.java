@@ -1,4 +1,4 @@
-package com.manali.singleRespPrinciple.srpFollowed;
+package com.manali.designPatterns.solidPrinciples.singleRespPrinciple.srpFollowed;
 
 import java.util.ArrayList;
 import java.util.List;

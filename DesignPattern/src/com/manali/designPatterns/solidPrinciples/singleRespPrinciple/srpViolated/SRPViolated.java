@@ -1,4 +1,4 @@
-package com.manali.singleRespPrinciple.srpViolated;
+package com.manali.designPatterns.solidPrinciples.singleRespPrinciple.srpViolated;
 
 import java.util.ArrayList;
 import java.util.List;

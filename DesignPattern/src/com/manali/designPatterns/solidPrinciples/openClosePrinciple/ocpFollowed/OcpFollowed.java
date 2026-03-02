@@ -1,9 +1,9 @@
-package com.manali.openClosePrinciple.ocpViolated;
+package com.manali.designPatterns.solidPrinciples.openClosePrinciple.ocpFollowed;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OcpViolated {
+public class OcpFollowed {
     public static void main(String[] args) {
         Cart cart = new Cart();
 
@@ -15,8 +15,11 @@ public class OcpViolated {
         InvoicePrinter invoicePrinter = new InvoicePrinter(cart);
         invoicePrinter.printInvoice();
 
-        CartStorage cartStorage = new CartStorage(cart);
-        cartStorage.saveToMySQL();
+        DBPersistence mongo = new MongoDBPersistence();
+        DBPersistence mySql = new MySQLPersistence();
+
+        mySql.save();
+        mongo.save();
 
     }
 }
@@ -70,19 +73,21 @@ class InvoicePrinter {
 }
 
 //only responsible for DB saving logic
-//violates open close principle if any new saving method come we will have to add it here
-class CartStorage {
-    Cart cart;
+//follows ocp
+interface DBPersistence {
+    void save();
+}
 
-    public CartStorage(Cart cart) {
-        this.cart = cart;
-    }
-
-    public void saveToMySQL() {
+class MySQLPersistence implements DBPersistence {
+    @Override
+    public void save() {
         System.out.println("Save to MySQL");
     }
+}
 
-    public void saveToMongoDB() {
+class MongoDBPersistence implements DBPersistence {
+    @Override
+    public void save() {
         System.out.println("Save to MongoDB");
     }
 }
